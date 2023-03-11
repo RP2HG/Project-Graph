@@ -1,0 +1,16 @@
+---
+author: Russell Plummer
+date: 12/2/21
+title: 'YML Test'
+nodes:
+  - name: PORNodes.csv
+    nodetype: POR
+    color: lightblue
+  - name: BBTNodes.csv
+    nodetype: BBT
+    color: lightgreen
+edges:
+  - name: POREdges.csv
+    nodetype: POR
+    color: lightblue
+---

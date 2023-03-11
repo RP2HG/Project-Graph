@@ -2,27 +2,18 @@
 title: "Project-Graph-Design"
 format: pdf
 author: "Russell Plummer"
-date: "11th March 2023"
+date: "11/03/23"
 editor: visual
 ---
 
-## Quarto
+# Project Graph
 
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+## Intent / Purpose
 
-## Running Code
+Aim is to link aspects of a large project using graph functionality
 
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+Built using smaller modules
 
-```{r}
-1 + 1
-```
+## Modules
 
-You can add options to executable code like this
-
-```{r}
-#| echo: false
-2 * 2
-```
-
-The `echo: false` option disables the printing of code (only output is displayed).
+### Test Stubs
