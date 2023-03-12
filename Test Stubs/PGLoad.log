@@ -1,0 +1,3 @@
+INFO  [2023-03-12 16:20:12] Starting Load with Logging set to  DEBUG
+DEBUG [2023-03-12 16:20:12] Loading Config File:  Test-Yaml.yml
+DEBUG [2023-03-12 16:20:12] Creating Databse:  Project-Graph-DB.sql
