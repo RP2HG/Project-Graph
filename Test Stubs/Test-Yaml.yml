@@ -11,6 +11,6 @@ nodes:
     color: lightgreen
 edges:
   - name: POREdges.csv
-    nodetype: POR
+    edgetype: POR
     color: lightblue
 ---

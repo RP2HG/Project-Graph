@@ -32,7 +32,7 @@ info(logger, log_msg)
 # Set up our filenames
 
 config_file <- "Test-Yaml.yml"
-graph_data_store <- "Project-Graph-DB.sql"
+graph_data_store <- "Project-Graph-DB.db"
 
 # Time to start work, load up the configuration file
 # The config file points to the files containing our Programme components
@@ -41,6 +41,7 @@ graph_data_store <- "Project-Graph-DB.sql"
 log_msg <- paste("Loading Config File: ", config_file)
 debug(logger, log_msg)
 yaml_data <- read_yaml('Test-Yaml.yml')
+# print(yaml_data)
 
 # Now create an empty SQLite database file where we will store the various 'artefacts'
 # Tables are NODE-{type} where type is from the file being uploaded, or alternatively EDGE-{type}
@@ -52,23 +53,71 @@ debug(logger, log_msg)
 
 gds <- dbConnect(RSQLite::SQLite(), graph_data_store)
 
-pr_str <- paste("No of ")
+log_msg <- paste("No of node files to process", length(yaml_data$nodes))
+info(logger, log_msg)
+log_msg <- paste("No of edge files to process", length(yaml_data$edges))
+info(logger, log_msg)
 
-# test here - load a CSV file and post into the database
-j <- read_csv(
-  yaml_data$nodes[[1]]$name
-)
+# walk through loading the node files into DB tables
+for (i in 1:length(yaml_data$nodes)){
+  # grab the appropriate bits of the YAML entry
+  nodes_file <- yaml_data$nodes[[i]]$name
+  nodes_type <- yaml_data$nodes[[i]]$nodetype
+  tbl_name <- paste("NODE-", nodes_type, sep='' )
+  log_msg <- paste("Processing file ", nodes_file, " to DB table ", tbl_name )
+  info(logger, log_msg)
 
-print(j)
+  # now do it
+  nodes_data <- read_csv(
+    nodes_file
+    )
+  
+  if(dbExistsTable(gds,tbl_name)){
+    log_msg <- paste("Table: ", tbl_name , "already exists, replacing data")
+    info(logger, log_msg)
+    # To-Do - put in the logic to merge new with old data - dbAppendTable(gds, tbl_name, nodes_data)
+    } else {
+      log_msg <- paste("Table: ", tbl_name , "is new, creating table")
+      info(logger, log_msg)
+    }
+  dbWriteTable(gds, tbl_name, nodes_data, overwrite = TRUE)
+  
+  log_msg <- paste( rows_written, "Rows created in Table: ", tbl_name)
+  info(logger, log_msg)
+  }
 
-dbWriteTable(gds, "mtcars", j)
+# walk through loading the edge files into DB tables
+for (i in 1:length(yaml_data$edges)){
+  # grab the appropriate bits of the YAML entry
+  edges_file <- yaml_data$edges[[i]]$name
+  # To-Do - Cahnge the YAML to say "edgetype"
+  edges_type <- yaml_data$edges[[i]]$edgetype
+  tbl_name <- paste("EDGE-", edges_type, sep='' )
+  log_msg <- paste("Processing file ", edges_file, " to DB table ", tbl_name )
+  info(logger, log_msg)
+  
+  # now do it
+  edges_data <- read_csv(
+    edges_file
+  )
+  
+  if(dbExistsTable(gds,tbl_name)){
+    log_msg <- paste("Table: ", tbl_name , "already exists, replacing data")
+    info(logger, log_msg)
+    # To-Do - put in the logic to merge new with old data - dbAppendTable(gds, tbl_name, nodes_data)
+  } else {
+    log_msg <- paste("Table: ", tbl_name , "is new, creating table")
+    info(logger, log_msg)
+  }
+  dbWriteTable(gds, tbl_name, edges_data, overwrite = TRUE)
+  
+  log_msg <- paste( rows_written, "Rows created in Table: ", tbl_name)
+  info(logger, log_msg)
+}
+
+
 dbListTables(gds)
 
-
-
-fatal(logger, "Err Nerr")
-
-print(yaml_data)
 askYesNo("Finish")
 
 # Closing down so tidy everything up
