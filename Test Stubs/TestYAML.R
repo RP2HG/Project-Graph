@@ -52,6 +52,8 @@ debug(logger, log_msg)
 
 gds <- dbConnect(RSQLite::SQLite(), graph_data_store)
 
+pr_str <- paste("No of ")
+
 # test here - load a CSV file and post into the database
 j <- read_csv(
   yaml_data$nodes[[1]]$name
