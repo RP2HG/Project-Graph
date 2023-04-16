@@ -1,0 +1,15 @@
+Name,Type,Target-Amount,Target Type,Description
+Net-Zero,Outcome,0,Master,
+Water Quality,Outcome,0,Master,
+Biodiversity,Outcome,0,Master,
+Peatland,Outcome,0,Master,
+CO2 Emission,Outcome,500000,Amount,Reduction in CO2 (tonnes per annum)
+NO2 Emission,Outcome,200000,Amount,Reduction in NO2 (tonnes per annum)
+CH4 Emission,Outcome,150000,Amount,Reduction in methane (tonnes per annum)
+Nitrate,Outcome,20,Percentage,Percentage Reduction of Nitrates in Water
+Phosphate,Outcome,35,Percentage,Percentage Reduction of Phosphates in Water
+Plant Species,Outcome,10,Percentage,Percentage increase in Plant Species identified 
+Mammal Species,Outcome,5,Percentage,Percentage increase in Plant Species identified 
+Tree Species,Outcome,10,Percentage,Percentage increase in Plant Species identified 
+Peatland Area,Outcome,20000,Amount,Increase in land area of Peatland (HA)
+Peatland Production,Outcome,15,Percentage,Percentage increase in peatland in existing land 

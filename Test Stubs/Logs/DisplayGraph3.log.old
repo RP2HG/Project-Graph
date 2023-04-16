@@ -1,0 +1,7 @@
+INFO  [2023-04-10 10:50:14] Starting Display with Logging set to  DEBUG
+DEBUG [2023-04-10 10:50:14] Loading Config File:  Test-Yaml.yml
+DEBUG [2023-04-10 10:50:14] Opening Database:  Project-Graph-DB.db
+INFO  [2023-04-10 10:50:14] Connected to databse in  Project-Graph-DB.db
+INFO  [2023-04-10 10:50:14] Table:  G-nodes is available, loading data from table
+INFO  [2023-04-10 10:50:14] Table:  G-edges is available, loading data from table
+INFO  [2023-04-10 10:50:14] Starting Shiny Server

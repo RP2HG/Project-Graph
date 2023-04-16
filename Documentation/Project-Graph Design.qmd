@@ -1,8 +1,15 @@
 ---
 title: "Project-Graph-Design"
-format: pdf
+subtitle: "Reducing the human burden of linking essential programme components together, to create a real-time decision support capability"
+date: "04-15-2023"
+format: 
+  pdf:
+    papersize: a4
+    toc: true
+    lof: true
+    number-sections: true
+    fontfamily: sourcesanspro
 author: "Russell Plummer"
-date: "11/03/23"
 editor: visual
 ---
 
@@ -10,10 +17,105 @@ editor: visual
 
 ## Intent / Purpose
 
-Aim is to link aspects of a large project using graph functionality
+### Background - Programme Parts
+
+A large and complex programme can have many moving parts which are essential to delivery of the whole, but these parts are represented by differing sets of artefacts and internal controls, each of which can be changing. A relatively simple example, based on some of the components of DEFRA's Farming & Countryside Programme is shown below in @ProgComp
+
+![ProgComp](Images/System-Space-1.png){#fig-ProgComp}
+
+Taken in isolation, each part has it's own set of rules, and ways that progress can be evaluated or measured
+
+Understand impacts - get an end-end view, but cut out all of the noise. Today it is done by people knowing
+
+Be able to model impacts
+
+### Co-ordination across the Programme
+
+However, these different parts are actually intrinsically linked, and the co-ordination
+
+![Project link data overlay](Images/System-Space-2.png)
+
+### Software Aims - Design Principles
+
+-   To be as configurable as possible
+
+-   To be usable by anyone without needing to have software developers involved at every step
 
 Built using smaller modules
 
-## Modules
+## Data Sets
 
-### Test Stubs
+### Table names for the master data.
+
+HR = Human readable, G = Graph
+
+![](Images/MasterTable.png)
+
+#### HR-nodes Table Format
+
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| Column | Type   | Description                                                                                                                  |
++========+========+==============================================================================================================================+
+| tnames | string | Name of a table in the database containing Human Readable data that has been loaded from a CSV format file.                  |
+|        |        |                                                                                                                              |
+|        |        | To assist readability, the table is named "NODE-*xxxxx*" where xxxxx is taken from *nodetype* in the yaml configuration file |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| tfiles | string | The filename of the CSV file uploaded to create the table in *tnames*                                                        |
+|        |        |                                                                                                                              |
+|        |        | This file is taken from the *name* field in the YAML file                                                                    |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| ttypes | string | The type of the data in node, taken from *nodetype* in the yaml configuration file                                           |
+|        |        |                                                                                                                              |
+|        |        | This column is used to define Groups in each set of Edges in the network                                                     |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+
+#### HR-edges Table Format
+
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| Column | Type   | Description                                                                                                                  |
++========+========+==============================================================================================================================+
+| tnames | string | Name of a table in the database containing Human Readable data that has been loaded from a CSV format file.                  |
+|        |        |                                                                                                                              |
+|        |        | To assist readability, the table is named "EDGE-*xxxxx*" where xxxxx is taken from *edgetype* in the yaml configuration file |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| tfiles | string | The filename of the CSV file uploaded to create the table in *tnames*                                                        |
+|        |        |                                                                                                                              |
+|        |        | This file is taken from the *name* field in the YAML file                                                                    |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+| ttypes | string | The type of the data in node, taken from *edgetype* in the yaml configuration file                                           |
+|        |        |                                                                                                                              |
+|        |        | This column is used to define Groups in each set of Edges in the network                                                     |
++--------+--------+------------------------------------------------------------------------------------------------------------------------------+
+
+\# graph_nodes: id, label, title, shape, group
+
+#### G-nodes Table Format
+
+| Column | Type    | Description                                                                |
+|--------|---------|----------------------------------------------------------------------------|
+| id     | integer | Node ID - passed to the graph                                              |
+| label  | string  | Label for the node - shown by visNetwork when rendering the graph          |
+| title  | string  | Title for the node - shown by visNetwork when doing a mouseover            |
+| shape  | string  | Shape that the node will take                                              |
+| group  | string  | Group that the node belows to - used to set group attributes by visNetwork |
+
+#### G-edges Table Format
+
+| Column | Type    | Description                   |
+|--------|---------|-------------------------------|
+| id     | integer | Edge id - passed to the graph |
+| from   | integer | Node id of start node         |
+| to     | integer | Node id of end node           |
+| label  | string  | Label shown by visNetwork     |
+
+### HR Data Files
+
+![](Images/HR%20Database%20Format.png)
+
+node table = 'NODE-'{goup}
+
+\# graph_edges: id, from {node id from grpah nodes}, to
+
+\# edge table = 'EDGE-'{group}
+
+\# cross_group_edges: from {node_lable}, from_node_group, to {node_lable}, to_node_group

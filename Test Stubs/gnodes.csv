@@ -1,0 +1,13 @@
+id,label,title,shape,group
+1,FCP,FCP,circle,
+2,Outcome,Outcome,box,Outcome
+3,Scheme,Scheme,circle,Scheme
+4,Capability,Capability,square,Capability
+5,Net-Zero,Net-Zero,box,Outcome
+6,PeatLand,PeatLand,box,Outcome
+7,Water,Water,box,Outcome
+8,SFI23,SFI23,circle,Scheme
+9,FTF,FTF,circle,Scheme
+10,Advice,Advice,square,Capability
+11,Agreement,Agreement,square,Capability
+12,Payment,Payment,square,Capability
