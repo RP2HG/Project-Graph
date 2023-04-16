@@ -1,0 +1,8 @@
+INFO  [2023-04-16 17:42:21] Starting GLoad2 with Logging set to  DEBUG
+DEBUG [2023-04-16 17:42:21] Loading Config File:  Test-Yaml.yml
+INFO  [2023-04-16 17:42:21] Connecting to Database:  Project-Graph-DB.db
+INFO  [2023-04-16 17:42:21] Connected to databse in  Project-Graph-DB.db
+INFO  [2023-04-16 17:42:21] Table:  G-nodes  already exists, replacing data by deleting table
+INFO  [2023-04-16 17:42:21] Table:  G-nodes has been created
+INFO  [2023-04-16 17:42:21] Table:  G-edges  already exists, replacing data by deleting table
+INFO  [2023-04-16 17:42:21] Table:  G-edges has been created

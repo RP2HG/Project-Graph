@@ -4,6 +4,7 @@ library('log4r')
 library('tidyverse')
 library('DBI')
 library(visNetwork)
+library(fs)
 
 # Core display function here - goes to the database, extracts the node & edge data
 # from tables G-nodes & G-edges, then pushes it into visNetwork
@@ -20,7 +21,7 @@ log_filename <- 'Logs/DisplayGraph3.log'
 log_loglevel <- 'DEBUG'
 
 if (file.exists(log_filename)){
-  file.rename(log_filename, paste(log_filename, ".old", sep=""))
+  file.rename(log_filename, path_ext_set(path_ext_remove(log_filename), "old"))
 }
 logger <- create.logger()
 logfile(logger) <- log_filename

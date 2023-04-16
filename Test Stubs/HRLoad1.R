@@ -2,6 +2,7 @@ library('yaml')
 library('log4r')
 library('tidyverse')
 library('DBI')
+library(fs)
 
 #  Start of day stuff goes here
 
@@ -14,7 +15,7 @@ log_filename <- 'Logs/HRLoad1.log'
 log_loglevel <- 'DEBUG'
 
 if (file.exists(log_filename)){
-  file.rename(log_filename, paste(log_filename, ".old", sep=""))
+  file.rename(log_filename, path_ext_set(path_ext_remove(log_filename), "old"))
 }
 logger <- create.logger()
 logfile(logger) <- log_filename
