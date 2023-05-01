@@ -1,0 +1,8 @@
+INFO  [2023-05-01 17:01:41] Starting Display with Logging set to  DEBUG
+DEBUG [2023-05-01 17:01:41] Loading Config File:  Test-Yaml.yml
+INFO  [2023-05-01 17:01:41] Database Configuration set to  SOS-DB.db
+DEBUG [2023-05-01 17:01:41] Opening Database:  SOS-DB.db
+INFO  [2023-05-01 17:01:41] Connected to databse in  SOS-DB.db
+INFO  [2023-05-01 17:01:41] Table:  G-nodes is available, loading data from table
+INFO  [2023-05-01 17:01:41] Table:  G-edges is available, loading data from table
+INFO  [2023-05-01 17:01:41] Starting Shiny Server

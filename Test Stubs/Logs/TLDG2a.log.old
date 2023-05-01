@@ -1,0 +1,8 @@
+INFO  [2023-04-22 17:15:09] Starting Temp Loader with Logging set to  DEBUG
+DEBUG [2023-04-22 17:15:09] Loading Config File:  Test-Yaml.yml
+DEBUG [2023-04-22 17:15:09] Opening Database:  Project-Graph-DB.db
+INFO  [2023-04-22 17:15:09] Connected to databse in  Project-Graph-DB.db
+INFO  [2023-04-22 17:15:09] Table:  G-nodes is available, creating table
+INFO  [2023-04-22 17:15:09] Table:  G-edges is available, creating table
+INFO  [2023-04-22 17:15:11] Closing Database 
+INFO  [2023-04-22 17:15:11] Load Completed

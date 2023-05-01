@@ -1,23 +1,25 @@
-INFO  [2023-04-16 17:11:51] Starting HRLoad1 with Logging set to  DEBUG
-DEBUG [2023-04-16 17:11:51] Loading Config File:  Test-Yaml.yml
-DEBUG [2023-04-16 17:11:51] Creating Database:  Project-Graph-DB.db
-INFO  [2023-04-16 17:11:51] Table:  HR-nodes  already exists, replacing data
-INFO  [2023-04-16 17:11:51] Created Master Table HR-nodes
-INFO  [2023-04-16 17:11:52] Table:  HR-edges  already exists, replacing data
-INFO  [2023-04-16 17:11:52] Created Master Table HR-edges
-INFO  [2023-04-16 17:11:52] No of node files to process 2
-INFO  [2023-04-16 17:11:52] No of edge files to process 1
-INFO  [2023-04-16 17:11:52] Processing file  OutcomeNodes.csv  to DB table  NODE-Outcome
-INFO  [2023-04-16 17:11:52] Table:  NODE-Outcome already exists, replacing data
-INFO  [2023-04-16 17:11:52] Rows created in Table:  NODE-Outcome
-INFO  [2023-04-16 17:11:52] Added  NODE-Outcome  to Master Nodes Table:  HR-nodes
-INFO  [2023-04-16 17:11:52] Processing file  SchemeNodes.csv  to DB table  NODE-Scheme
-INFO  [2023-04-16 17:11:52] Table:  NODE-Scheme already exists, replacing data
-INFO  [2023-04-16 17:11:52] Rows created in Table:  NODE-Scheme
-INFO  [2023-04-16 17:11:52] Added  NODE-Scheme  to Master Nodes Table:  HR-nodes
-INFO  [2023-04-16 17:11:52] Processing file  OutcomeEdges.csv  to DB table  EDGE-Outcome
-INFO  [2023-04-16 17:11:53] Table:  EDGE-Outcome already exists, replacing data
-INFO  [2023-04-16 17:11:53] Rows created in Table:  EDGE-Outcome
-INFO  [2023-04-16 17:11:53] Added  EDGE-Outcome  to Master Nodes Table:  HR-edges
-INFO  [2023-04-16 17:11:53] Closing Database 
-INFO  [2023-04-16 17:11:53] Load Completed
+INFO  [2023-05-01 17:08:50] Starting HRLoad1 with Logging set to  DEBUG
+INFO  [2023-05-01 17:08:50] Loading Config File:  PGConf.yml
+INFO  [2023-05-01 17:08:50] Database Configuration set to  SOS-DB.db
+INFO  [2023-05-01 17:08:50] Database Configuration set to  SOS-DB.db
+INFO  [2023-05-01 17:08:50] Creating Database:  SOS-DB.db
+INFO  [2023-05-01 17:08:50] Table:  HR-nodes  already exists, replacing data
+INFO  [2023-05-01 17:08:50] Created Master Table HR-nodes
+INFO  [2023-05-01 17:08:50] Table:  HR-edges  already exists, replacing data
+INFO  [2023-05-01 17:08:50] Created Master Table HR-edges
+INFO  [2023-05-01 17:08:50] No of node files to process 2
+INFO  [2023-05-01 17:08:50] No of edge files to process 1
+INFO  [2023-05-01 17:08:50] Processing file: OutcomeNodes.csv  into database table: NODE-Outcome
+INFO  [2023-05-01 17:08:50] Table:  NODE-Outcome already exists, replacing data
+INFO  [2023-05-01 17:08:50] 14  rows created in Table: NODE-Outcome
+INFO  [2023-05-01 17:08:50] Added  NODE-Outcome  to Master Nodes Table:  HR-nodes
+INFO  [2023-05-01 17:08:50] Processing file: SchemeNodes.csv  into database table: NODE-Scheme
+INFO  [2023-05-01 17:08:50] Table:  NODE-Scheme already exists, replacing data
+INFO  [2023-05-01 17:08:50] 2  rows created in Table: NODE-Scheme
+INFO  [2023-05-01 17:08:50] Added  NODE-Scheme  to Master Nodes Table:  HR-nodes
+INFO  [2023-05-01 17:08:50] Processing file  OutcomeEdges.csv  to DB table  EDGE-Outcome
+INFO  [2023-05-01 17:08:50] Table:  EDGE-Outcome already exists, replacing data
+INFO  [2023-05-01 17:08:50] Rows created in Table:  EDGE-Outcome
+INFO  [2023-05-01 17:08:50] Added  EDGE-Outcome  to Master Nodes Table:  HR-edges
+INFO  [2023-05-01 17:08:50] Closing Database 
+INFO  [2023-05-01 17:08:50] Load Completed

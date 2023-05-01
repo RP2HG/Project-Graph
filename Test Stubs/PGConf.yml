@@ -2,7 +2,8 @@
 author: Russell Plummer
 date: 12/2/21
 title: 'YML Test'
-projectname: 'FCP'
+projectname: 'System of Systems'
+database: 'SOS-DB.db'
 nodes:
   - name: OutcomeNodes.csv
     nodetype: Outcome

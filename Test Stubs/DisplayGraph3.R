@@ -58,8 +58,17 @@ graph_edges <- "G-edges"
 
 log_msg <- paste("Loading Config File: ", config_file)
 debug(logger, log_msg)
-yaml_data <- read_yaml('Test-Yaml.yml')
+yaml_data <- read_yaml('PGConf.yml')
 # print(yaml_data)
+# Let's see if we have defined a database name in teh YAML configuration file. If not
+# then default
+
+if (has_name(yaml_data, 'database')) {
+  graph_data_store <- yaml_data$database
+  levellog(logger, 'INFO', paste("Database Configuration set to ", graph_data_store))
+} else {
+  levellog(logger, 'INFO', paste("Database Configuration not set. Using default", graph_data_store))
+}
 
 # Now open the database so
 #    1 - Test it exists

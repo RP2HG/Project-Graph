@@ -1,11 +1,11 @@
-From,To
-Net Zero,CO2 Emission
-Net Zero,NO2 Emission
-Net Zero,CH4 Emission
-Water Quality,Nitrate
-Water Quality,Phosphate
-Biodiversity,Plant Species
-Biodiversity,Mammal Species
-Biodiversity,Tree Species
-Peatland,Peatland Area
-Peatland,Peatland Production
+From, From-Type,To,To-Type
+Net Zero,Outcome,CO2 Emission,Outcome
+Net Zero,Outcome,NO2 Emission,Outcome
+Net Zero,Outcome,CH4 Emission,Outcome
+Water Quality,Outcome,Nitrate,Outcome
+Water Quality,Outcome,Phosphate,Outcome
+Biodiversity,Outcome,Plant Species,Outcome
+Biodiversity,Outcome,Mammal Species,Outcome
+Biodiversity,Outcome,Tree Species,Outcome
+Peatland,Outcome,Peatland Area,Outcome
+Peatland,Outcome,Peatland Production,Outcome
